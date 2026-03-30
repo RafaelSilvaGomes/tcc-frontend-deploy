@@ -1,0 +1,143 @@
+.container {
+  padding: 20px;
+  background-color: var(--background); /* Use as variáveis do seu tema */
+  min-height: 100%;
+}
+
+.canvasGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 colunas iguais */
+  gap: 12px;
+  min-height: 75vh; /* Garante uma altura mínima visual */
+}
+
+/* Colunas em modo Flex vertical para esticar os itens */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Faz os boxes dividirem o espaço da coluna igualmente */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* O Requisitos e Entregas podem ser maiores se desejar */
+.box.large {
+  flex: 2;
+}
+
+.box label {
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+  text-transform: uppercase;
+}
+
+.box textarea {
+  flex: 1;
+  width: 100%;
+  border: none;
+  padding: 12px;
+  font-size: 0.85rem;
+  resize: none; /* Em canvas, é melhor desabilitar o resize manual */
+  background-color: #fcfcfc;
+  color: #333;
+  outline: none;
+}
+
+/* Cores baseadas na imagem */
+.green label {
+  background-color: #27ae60;
+}
+.green textarea {
+  background-color: #e8f5e9;
+}
+
+.purple label {
+  background-color: #8e44ad;
+}
+.purple textarea {
+  background-color: #f3e5f5;
+}
+
+.orange label {
+  background-color: #d35400;
+}
+.orange textarea {
+  background-color: #fff3e0;
+}
+
+.blue label {
+  background-color: #2980b9;
+}
+.blue textarea {
+  background-color: #e3f2fd;
+}
+
+.yellow label {
+  background-color: #f1c40f;
+}
+.yellow textarea {
+  background-color: #fffde7;
+}
+
+.actions {
+  position: fixed;
+  bottom: 15px;
+  right: 50px;
+  z-index: 100;
+}
+
+.saveIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  user-select: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.saveIndicator.salvo {
+  background-color: #e8f5e9;
+  color: #27ae60;
+}
+
+.saveIndicator.salvando {
+  background-color: #fff3e0;
+  color: #d35400;
+}
+
+.saveIndicator.pendente {
+  background-color: #f1f1f1;
+  color: #7f8c8d;
+}
+
+.saveIndicator.erro {
+  background-color: #ffebee;
+  color: #c0392b;
+}
+
+/* Responsividade: vira uma lista em telas pequenas */
+@media (max-width: 1200px) {
+  .canvasGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .canvasGrid {
+    grid-template-columns: 1fr;
+  }
+}
