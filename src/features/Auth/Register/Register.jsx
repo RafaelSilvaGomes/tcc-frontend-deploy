@@ -146,6 +146,7 @@ export function Register() {
                                 value={formData.password}
                                 onChange={handleChange}
                                 placeholder="Mínimo 8 caracteres"
+                                autoComplete="new-password"
                                 required
                             />
                         </div>
@@ -158,6 +159,7 @@ export function Register() {
                                 value={formData.confirm_password}
                                 onChange={handleChange}
                                 placeholder="Repita a senha"
+                                autoComplete="new-password"
                                 required
                             />
                         </div>
